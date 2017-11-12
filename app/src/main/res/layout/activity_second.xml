@@ -1,59 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.atilano.atilano_sharedpreferences_internalstorage.SecondActivity">
 
-    <Button
-        android:id="@+id/btnLoadPref"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Load Shared Preferences"
-        android:onClick="loadPref"
-        />
 
-    <Button
-        android:id="@+id/btnLoadStorage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/btnLoadPref"
-        android:text="Load Internal Storage"
-        android:onClick="loadStorage"
-        />
 
-    <TextView
-        android:id="@+id/tvDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_below="@+id/btnLoadStorage"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:id="@+id/btnClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="70dp"
-        android:layout_below="@id/tvDisplay"
-        android:text="Clear"
-        android:onClick="clearDisplay"
-        />
-
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="70dp"
-        android:layout_below="@id/tvDisplay"
-        android:text="Back"
-        android:onClick=""
-        />
 
 </RelativeLayout>

@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences preferences;
     FileOutputStream fos;
 
+    String user, pwd;
+
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         etUname = (EditText) findViewById(R.id.etUname);
         etPword = (EditText) findViewById(R.id.etPword);
+        preferences = getSharedPreferences("sharedText", MODE_PRIVATE);
     }
 
     public void savePreferences(View view){
@@ -37,15 +42,15 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("user", etUname.getText().toString());
         editor.putString("pwd", etPword.getText().toString());
         editor.commit();
-        Toast.makeText(this, "Saved in Shared Preferences", Toast.LENGTH_LONG).show();
+
+        Toast.makeText(this, "Saved in Shared Preferences", Toast.LENGTH_SHORT).show();
     }
 
     public void saveStorage(View view){
-        String user = etUname.getText().toString();
-        String pwd = etPword.getText().toString();
+        String user = "Username: " + etUname.getText().toString() + " | ";
+        String pwd = "Password: " + etPword.getText().toString();
 
         try{
-            fos = openFileOutput("output.txt", Context.MODE_PRIVATE);
             fos = openFileOutput("output.txt", Context.MODE_PRIVATE);
             fos.write(user.getBytes());
             fos.write(pwd.getBytes());
@@ -61,11 +66,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        Toast.makeText(this, "Saved in Internal Storage", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Saved in Internal Storage", Toast.LENGTH_SHORT).show();
     }
 
     public void openNext(View view){
-        Intent intent = new Intent(this, SecondActivity.class);
+        intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
 }
